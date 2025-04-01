@@ -1,0 +1,20 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.map {
+
+  .map__content {
+    width: auto;
+    margin: 90px auto 0;
+  }
+
+  &__content {
+    max-width: 1190px;
+
+  }
+
+  &__wrapper {
+    padding: 0 30px;
+    width: auto;
+  }
+}

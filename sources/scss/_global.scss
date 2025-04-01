@@ -1,0 +1,220 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+// Layout
+
+html {
+  font-size: 1rem;
+  scroll-behavior: smooth;
+
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  background-color: $body-bg-color;
+
+  color: $dark;
+
+  font-family: $main-font;
+  font-weight: normal;
+  font-size: 1rem;
+
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  box-sizing: border-box;
+
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+
+  max-width: 100%;
+
+  @media (min-width: $xl) {
+    max-width: 1250px;
+  }
+
+  @media (max-width: $xl) {
+    max-width: 1140px;
+  }
+
+  @media (max-width: $lg) {
+    max-width: 960px;
+  }
+
+  @media (max-width: $md) {
+    max-width: 720px;
+  }
+
+  @media (max-width: $sm) {
+    max-width: 540px;
+    margin: 0 15px;
+  }
+}
+
+.container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  max-width: 100%;
+  width: 100%;
+
+
+}
+
+.logo {
+  width: 125px;
+  height: 25px;
+
+  img {
+    width: inherit;
+    height: inherit;
+  }
+}
+
+// Tags
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $main-font;
+  font-weight: 400;
+
+  margin: 0;
+  padding: 0;
+  position: relative;
+  color: $dark;
+  letter-spacing: normal;
+}
+
+p {
+  font-family: $main-font;
+
+  margin: 0;
+  word-break: break-word;
+  font-weight: 400;
+
+  &:first-child {
+    margin-top: 0px;
+  }
+}
+
+span {
+  font-family: $main-font;
+  font-weight: 400;
+}
+
+ul {
+  font-size: 1rem;
+  font-family: $main-font;
+
+  list-style: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  font-weight: 400;
+
+  @media (min-width: $md) {
+    font-size: 1.15rem;
+  }
+}
+
+button,
+input,
+select,
+optgroup,
+textarea {
+  font-family: $main-font;
+  margin: 0;
+  font-size: 100%;
+  line-height: 1.15;
+
+  overflow: visible;
+
+  &:focus-visible {
+    outline: 1px solid $dark;
+  }
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+// select,
+// input {
+//   outline: none;
+// }
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  appearance: button;
+}
+
+hr,
+img {
+  border: none;
+}
+
+// Links
+a {
+  background-color: transparent;
+
+  font-family: $main-font;
+  text-decoration: none;
+  color: $dark;
+
+  &:hover {
+    color: $link-hover;
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: $link-pressed;
+  }
+
+  &:focus-visible {
+    outline: 3px solid $dark;
+  }
+}
+
+// Img
+
+.img-responsive {
+  width: auto;
+  margin: 0 auto;
+  max-height: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+img {
+  border-style: none;
+}
+
+// Swiper
+.swiper-slide-active {
+  animation: toggle-opacity 0.4s ease-in 0s 1 forwards;
+}

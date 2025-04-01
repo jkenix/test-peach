@@ -1,0 +1,103 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+// Blocks
+@forward "offer__top";
+@forward "offer__menu";
+
+// Global
+.offer {
+  @include column;
+
+  &__title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 120%;
+    text-align: center;
+
+    color: $red;
+
+    @media (max-width: $lg) {
+      font-size: 2.5rem;
+    }
+
+    @media (max-width: $sm) {
+      font-size: 1.75rem;
+      font-weight: 600;
+      line-height: 120%;
+
+      text-align: start;
+    }
+  }
+
+  &__desc {
+    color: rgb(68, 68, 68);
+
+    margin-top: 30px;
+
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 120%;
+    text-align: center;
+
+    @media (max-width: $lg) {
+      font-size: 1.5rem;
+    }
+
+    @media (max-width: $md) {
+      font-size: 1.25rem;
+    }
+
+    @media (max-width: $sm) {
+      font-size: 1rem;
+      text-align: left;
+
+      margin-top: 10px;
+    }
+  }
+
+  // Stats
+  &__stats {
+    display: block;
+
+    @media (min-width: $sm) {
+      display: none;
+    }
+  }
+
+  &__stats-content {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-evenly;
+    align-items: center;
+    row-gap: 24px;
+
+    padding: 0px 13px;
+  }
+
+  &__achiev {
+    @include column;
+    align-items: center;
+
+    text-align: center;
+  }
+
+  &__achiev-num {
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 80%;
+  }
+
+  &__achiev-desc {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  // Top menu arrow
+
+  &__arrow-top {
+    display: none;
+  }
+}

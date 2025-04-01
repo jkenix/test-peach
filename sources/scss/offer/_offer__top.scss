@@ -1,0 +1,90 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.offer__top {
+  margin: 79px 0;
+
+  padding: 0 71px 0 78px;
+
+  @media (max-width: $sm) {
+    padding: 18px 20px 0;
+
+    margin: 7px auto 50px;
+  }
+
+  &-menu {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 0px 70px;
+
+    height: 80px;
+
+    @media (max-width: $lg) {
+      flex-direction: column;
+      height: auto;
+    }
+  }
+
+  &-menu-opener {
+    display: flex;
+    gap: 16px;
+
+    padding: 28px 0;
+
+    cursor: pointer;
+
+    &.active {
+      .offer__arrow-bottom {
+        display: none;
+      }
+      .offer__arrow-top {
+        display: block;
+      }
+    }
+
+    @media (max-width: $lg) {
+      gap: 6px;
+      padding: 28px 0 0;
+    }
+  }
+
+  &-menu-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 100%;
+
+    @media (max-width: $lg) {
+      font-size: 1.25rem;
+    }
+  }
+
+  // Top menu nav
+  &-menu-nav {
+    display: flex;
+
+    max-width: 736px;
+
+    &.active {
+      opacity: 0.1;
+
+      pointer-events: none;
+    }
+
+    @media (max-width: $xl) and (min-width: $lg) {
+      max-width: 650px;
+    }
+  }
+
+  &-menu-list {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &-menu-link {
+    &.swiper-slide-thumb-active {
+      border-bottom: 3px solid $red-2;
+    }
+  }
+}
