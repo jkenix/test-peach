@@ -31,6 +31,7 @@
     "scss": "sudo sass --watch --sourcemap=none --style=compressed sources/scss/styles.scss:sources/css/styles.css",
     "dev": "vite --config dev.config.js",
     "prod": "vite build --config prod.config.js",
+    "l-prod": "vite build --config local-prod.js",
     "prev": "vite preview --open",
     "mk": "mkdir dist",
     "clean": "rd /s /q dist"

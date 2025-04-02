@@ -59,6 +59,10 @@
       @media (max-width: $lg) {
         padding: 20px 0;
       }
+
+      @media (max-width: $sm) {
+        padding: 16px 0;
+      }
     }
 
     @media (max-width: $sm) {
@@ -90,7 +94,6 @@
     }
 
     @media (max-width: $sm) {
-
     }
   }
 

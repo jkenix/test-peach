@@ -2,19 +2,51 @@
 @use "mixins" as *;
 
 .map {
-
   .map__content {
     width: auto;
     margin: 90px auto 0;
+
+    @media (max-width: $sm) {
+      margin: 12px auto 0;
+
+      max-height: 409px;
+    }
   }
 
   &__content {
     max-width: 1190px;
 
+    .map__slide.swiper-slide-active {
+      img {
+        display: block;
+      }
+    }
   }
 
   &__wrapper {
     padding: 0 30px;
     width: auto;
+
+    @media (max-width: $sm) {
+      padding: 0 15px;
+    }
+  }
+
+  &__img {
+    @media (max-width: $sm) {
+      max-width: 830px;
+
+      height: 100%;
+    }
+  }
+
+  &__slide.swiper-slide-next,
+  &__slide.swiper-slide-prev,
+  &__slide.swiper-slide {
+    @media (max-width: $sm) {
+      img {
+        display: none;
+      }
+    }
   }
 }

@@ -97,7 +97,7 @@ export default defineConfig({
   ],
   build: {
     target: browserslistToEsbuild(),
-    outDir: "dist",
+    outDir: "docs",
     assetsInlineLimit: 0,
     emptyOutDir: true,
     rollupOptions: {

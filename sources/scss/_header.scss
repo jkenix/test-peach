@@ -8,8 +8,12 @@
     padding: 30px 70px;
 
     @media (max-width: $md) {
-      padding: 16px 8px 16px 5px;
+      padding: 16px 32px;
       border: 0.5px solid rgb(217, 217, 217);
+    }
+
+    @media (max-width: $sm) {
+      padding: 16px 8px 16px 5px;
     }
   }
 
@@ -44,11 +48,13 @@
       justify-content: center;
     }
 
+    @media (max-width: $md) {
+      justify-content: flex-start;
+    }
+
     @media (max-width: $sm) {
       row-gap: 0px;
       column-gap: 10px;
-
-      justify-content: start;
     }
   }
 

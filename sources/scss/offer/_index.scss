@@ -28,6 +28,13 @@
 
       text-align: start;
     }
+
+    &--mission {
+      color: $white;
+
+      line-height: 100%;
+      text-align: center;
+    }
   }
 
   &__desc {
@@ -53,6 +60,19 @@
       text-align: left;
 
       margin-top: 10px;
+    }
+
+    &--mission {
+      color: $white;
+
+      font-size: 2.01rem;
+
+      @media (max-width: $sm) {
+        font-size: 1rem;
+        line-height: 130%;
+
+        text-align: center;
+      }
     }
   }
 
@@ -96,8 +116,28 @@
   }
 
   // Top menu arrow
-
   &__arrow-top {
     display: none;
+  }
+
+  // Mission
+  &__mission {
+    background-color: $red-2;
+
+    margin-top: 93px;
+
+    @media (max-width: $sm) {
+      margin-top: 0;
+    }
+  }
+
+  &__mission-content {
+    margin: 139px 0;
+    padding: 0 71px 0 78px;
+
+    @media (max-width: $sm) {
+      padding: 25px 20px 0;
+      margin: 7px auto 50px;
+    }
   }
 }

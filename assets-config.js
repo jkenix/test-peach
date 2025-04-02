@@ -1,22 +1,24 @@
-export const assetDir = "assets";
-// Add ${assetDir}/path-to-directory and
-// the file path will be assets/path-to-dev-directory
-// Or set settings for path assets/...
-// Delete first "/". Template: js[name.js]
-export const entryFileNames = `js/[name].js`;
-export const chunkFileNames = `js/[name]-[hash]-chunk.js`;
+export const assetDir = "assets"; // Папка для разработки
+export const entryFileNames = "js/[name].js";
+export const chunkFileNames = "js/[name]-[hash]-chunk.js";
+
 const assets = [
   {
-    output: `img/[hash][extname]`,
+    output: "img/[hash][extname]", // Изображения
     regex: /\.(png|jpe?g|gif|svg|webp|avif)$/,
   },
-  { output: `[name][extname]`, regex: /\.css$/ },
-  { output: `js/[name][extname]`, regex: /\.jsx?$/ },
-  { output: `[name][extname]`, regex: /\.css$/ },
-  // {
-  //   output: `webfonts/[name][extname]`,
-  //   regex: /\.(ttf|otf|fnt|woff)$/,
-  // },
+  {
+    output: "[name][extname]", // CSS в корне директории
+    regex: /\.css$/,
+  },
+  {
+    output: "js/[name][extname]", // JS файлы
+    regex: /\.jsx?$/,
+  },
+  {
+    output: "fonts/[name][extname]", // Шрифты
+    regex: /\.(ttf|otf|fnt|woff|woff2)$/,
+  },
 ];
 
 export function processAssetFileNames(info) {
@@ -24,9 +26,9 @@ export function processAssetFileNames(info) {
     const name = info.name;
     const result = assets.find((a) => a.regex.test(name));
     if (result) {
-      return result.output;
+      return result.output; // Возвращаем правильный путь для файла
     }
   }
-  // default since we don't have an entry
-  return `${assetDir}/[name][extname]`;
+  // Если не нашли соответствие, возвращаем имя файла по умолчанию
+  return "[name][extname]";
 }

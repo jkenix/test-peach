@@ -214,6 +214,10 @@ img {
   border-style: none;
 }
 
+img[data-fancybox] {
+  cursor: zoom-in;
+}
+
 // Swiper
 .swiper-slide-active {
   animation: toggle-opacity 0.4s ease-in 0s 1 forwards;
