@@ -10,26 +10,20 @@
   @include column;
 
   &__title {
-    font-size: 3.5rem;
-    font-weight: 700;
     line-height: 120%;
-    text-align: center;
 
     color: $red;
 
-    @media (max-width: $lg) {
-      font-size: 2.5rem;
+    @media (min-width: $sm) {
+      font-weight: 700;
     }
 
     @media (max-width: $sm) {
-      font-size: 1.75rem;
-      font-weight: 600;
-      line-height: 120%;
-
       text-align: start;
     }
 
     &--mission {
+      font-weight: 600;
       color: $white;
 
       line-height: 100%;
@@ -66,6 +60,8 @@
       color: $white;
 
       font-size: 2.01rem;
+
+      line-height: 150%;
 
       @media (max-width: $sm) {
         font-size: 1rem;
