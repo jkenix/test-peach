@@ -1,5 +1,6 @@
 // Ждем, пока весь контент документа будет загружен
 document.addEventListener("DOMContentLoaded", () => {
+  // Открывашка меню offer
   const menuOpener = document.querySelector(".offer__top-menu-opener");
   menuOpener.addEventListener("click", function () {
     this.classList.toggle("active");
@@ -99,6 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
     firstSlideImg.style.display = "block"; // Убедитесь, что стиль установлен для первого слайда
   }
 
+  // Переключение слайдов по классам slide-(номер_слайда)
   // Получаем все элементы, которые соответствуют классу slide-<номер>
   const slideElements = document.querySelectorAll('[class^="slide-"]');
 
@@ -126,9 +128,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Initial Fancybox
   Fancybox.bind("[data-fancybox]", {});
 
-  // Fancybox.bind(".map__img", {
-  //   groupAll: true,
-  // });
+  //  Galery copr
+  Fancybox.bind(".cortopation__img", {
+    groupAll: true,
+  });
 });

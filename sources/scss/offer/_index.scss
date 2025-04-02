@@ -63,6 +63,10 @@
 
       line-height: 150%;
 
+      @media (max-width: $md) {
+        font-size: 1.25rem;
+      }
+
       @media (max-width: $sm) {
         font-size: 1rem;
         line-height: 130%;
@@ -123,17 +127,24 @@
     margin-top: 93px;
 
     @media (max-width: $sm) {
-      margin-top: 0;
+      margin: 6px 15px 0;
+
+      width: auto;
     }
   }
 
   &__mission-content {
-    margin: 139px 0;
+    margin: 144px 0;
     padding: 0 71px 0 78px;
 
+    @media (max-width: $md) {
+      margin: 100px 0;
+      padding: 0 45px;
+    }
+
     @media (max-width: $sm) {
-      padding: 25px 20px 0;
-      margin: 7px auto 50px;
+      padding: 25px 6px 0;
+      margin: 7px auto 33px;
     }
   }
 }
