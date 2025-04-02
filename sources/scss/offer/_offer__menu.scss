@@ -28,6 +28,8 @@
 
   @media (max-width: $xl) {
     justify-content: flex-start;
+    max-width: 100%;
+    width: calc(100% - 140px);
   }
 
   @media (max-width: $lg) {
@@ -39,7 +41,7 @@
   }
 
   @media (max-width: $sm) {
-    padding: 0px 15px 15px 15px;
+    padding: 0px 15px 22px 15px;
     max-width: 96%;
     width: auto;
   }
@@ -85,27 +87,27 @@
       margin-right: 0;
     }
 
-    &.active {
-      .offer__menu-list {
+    & .offer__menu-title.active {
+      + .offer__menu-list {
         @include column;
         animation: toggle-opacity 0.4s ease-in 0s 1 forwards;
       }
     }
 
     @media (max-width: $xl) {
-      width: 13.94%;
+      width: 17.1%;
     }
 
     @media (max-width: $lg) {
-      width: 21%;
+      width: 21.08%;
     }
 
     @media (max-width: $md) {
-      width: 27.8%;
+      width: 27.6%;
     }
 
     @media (max-width: $sm) {
-      width: 33%;
+      width: 33.33%;
       max-width: 100%;
       margin-right: 0;
     }
@@ -119,6 +121,9 @@
   }
 
   &-list {
+    @include column;
+    gap: 15px;
+
     .offer__menu-link {
       font-weight: 400;
     }

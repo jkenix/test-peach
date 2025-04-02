@@ -163,7 +163,7 @@ let businessSolutionInitialized = false; // Флаг для отслеживан
 
 function initMenuNav() {
   // Получаем все элементы с классом offer__menu-nav
-  const menuNavItems = document.querySelectorAll(".offer__menu-nav");
+  const menuNavItems = document.querySelectorAll(".offer__menu-nav .offer__menu-title");
 
   // Проходим по каждому элементу и добавляем обработчик события
   menuNavItems.forEach((menuNav) => {
