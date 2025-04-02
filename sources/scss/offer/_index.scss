@@ -118,6 +118,12 @@
   // Top menu arrow
   &__arrow-top {
     display: none;
+
+    user-select: none;
+  }
+
+  &__arrow-bottom {
+    user-select: none;
   }
 
   // Mission

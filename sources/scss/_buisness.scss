@@ -42,6 +42,16 @@
 
     cursor: pointer;
 
+    &.active {
+      .buisness__solution-arrow-top {
+        display: block;
+      }
+
+      .buisness__solution-arrow {
+        display: none;
+      }
+    }
+
     @media (max-width: $xl) {
       max-width: 486px;
     }
@@ -99,6 +109,7 @@
     }
   }
 
+  // Solution content
   &__solution-content {
     @include column;
 
@@ -155,9 +166,17 @@
   &__solution-arrow {
     display: none;
 
+    user-select: none;
+
     @media (max-width: $sm) {
       display: block;
     }
+  }
+
+  &__solution-arrow-top {
+    display: none;
+
+    user-select: none;
   }
 
   &__solution-desc {
