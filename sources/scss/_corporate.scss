@@ -1,0 +1,110 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.corporate {
+  &__content {
+    display: flex;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    position: relative;
+
+    .corporate__button-next {
+      right: 0;
+      left: auto;
+    }
+
+    .corporate__button-prev {
+      left: auto;
+      right: 77px;
+    }
+
+    .corporate__button-next,
+    .corporate__button-prev {
+      width: 56px;
+      height: 56px;
+
+      @media (max-width: $sm) {
+        display: none;
+      }
+
+      &::after {
+        color: $red;
+        font-size: 25px;
+      }
+
+      &:hover {
+        background: $red;
+
+        &::after {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  &__wrapper {
+    margin: 100px 70px;
+
+    @media (max-width: $md) {
+      margin: 50px 20px;
+    }
+
+    .corporate__pagination {
+      position: relative;
+
+      @media (max-width: $sm) {
+        display: none;
+      }
+    }
+
+    .corporate__pagination-bullet {
+      background: $red-2;
+      border-radius: 0;
+
+      width: 100%;
+      max-width: 214px;
+      height: 6px;
+    }
+  }
+
+  &__title {
+    text-align: start;
+
+    line-height: 100%;
+  }
+
+  &__img {
+    cursor: zoom-in;
+  }
+
+  // Slider
+  &__slider {
+    margin-top: 58px;
+
+    @media (max-width: $sm) {
+      margin-top: 14px;
+    }
+  }
+
+  // Buttons
+  &__button-next,
+  &__button-prev {
+    border-radius: 64.29px;
+    background: rgb(240, 240, 240);
+
+    transition: all 0.1s ease-in-out;
+  }
+
+  // Pagination
+  &__pagination {
+    display: flex;
+    gap: 10px;
+
+    margin-top: 32px;
+  }
+
+  &__pagination-bullet {
+  }
+}

@@ -4,6 +4,10 @@
 .buisness {
   &__content {
     margin-top: 100px;
+
+    @media (max-width: $md) {
+      margin-top: 50px;
+    }
   }
 
   &__solutions {
@@ -15,6 +19,12 @@
 
     @media (max-width: $xl) {
       justify-content: center;
+    }
+
+    @media (max-width: $sm) {
+      gap: 10px;
+
+      margin-top: 15px;
     }
   }
 
@@ -49,19 +59,42 @@
       min-height: 60px;
     }
 
-    &:hover {
-      .buisness__solution-content {
-        max-height: 100%;
+    // Shown hidden text
+    @media (min-width: $sm) {
+      &:hover {
+        .buisness__solution-content {
+          max-height: 100%;
 
-        transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out;
+        }
+
+        .buisness__solution-desc {
+          display: block;
+        }
+
+        .buisness__solution-title {
+          padding-bottom: 0;
+        }
       }
+    }
 
-      .buisness__solution-desc {
-        display: block;
-      }
+    // Active (Scripts)
+    @media (max-width: $sm) {
+      &.active {
+        .buisness__solution-content {
+          max-height: 100%;
 
-      .buisness__solution-title {
-        padding-bottom: 0;
+          transition: all 0.5s ease-in-out;
+        }
+
+        .buisness__solution-desc {
+          display: block;
+        }
+
+        .buisness__solution-title {
+          padding-top: 15px;
+          padding-bottom: 0;
+        }
       }
     }
   }
@@ -90,12 +123,41 @@
   }
 
   &__solution-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    line-height: 100%;
+    display: flex;
+    gap: 5px;
 
     padding-top: 28px;
     padding-bottom: 28px;
+
+    span {
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 100%;
+    }
+
+    @media (max-width: $lg) {
+      align-items: center;
+    }
+
+    @media (max-width: $sm) {
+      padding-top: 0;
+      padding-bottom: 0;
+
+      height: inherit;
+      justify-content: space-between;
+
+      span {
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+  &__solution-arrow {
+    display: none;
+
+    @media (max-width: $sm) {
+      display: block;
+    }
   }
 
   &__solution-desc {
@@ -105,10 +167,11 @@
     line-height: 140%;
 
     margin-top: 20px;
+    padding-bottom: 28px;
 
     max-width: 480px;
 
-    animation: toggle-opacity 1s ease-in 0s 1 forwards;
+    animation: toggle-opacity 0.8s ease-in 0s 1 forwards;
   }
 
   &__solution-title,
@@ -118,5 +181,10 @@
     padding-left: 20px;
     padding-right: 20px;
     z-index: 5;
+
+    @media (max-width: $sm) {
+      padding-left: 10px;
+      padding-right: 5px;
+    }
   }
 }

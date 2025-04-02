@@ -12,25 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
     MenuNav.classList.toggle("active");
   });
 
-  // Получаем все элементы с классом offer__menu-nav
-  const menuNavItems = document.querySelectorAll(".offer__menu-nav");
-
-  // Проходим по каждому элементу и добавляем обработчик события
-  menuNavItems.forEach((menuNav) => {
-    menuNav.addEventListener("click", function () {
-      // Переключаем класс active для текущего элемента
-      this.classList.toggle("active");
-
-      // Находим и переключаем видимость полигонов
-      const polygon = this.querySelector(".offer__menu-polygon");
-      polygon.classList.toggle("hide");
-
-      const polygonActive = this.querySelector(".offer__menu-polygon-active");
-      polygonActive.classList.toggle("shown");
-    });
-  });
-
   // Sliders
+
+  // Top menu Offer
   var offer_Top_Menu = new Swiper(".offer__top-menu-nav", {
     slidesPerView: "auto",
     spaceBetween: 16,
@@ -51,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
+  // Map
   var map = new Swiper(".map .swiper", {
     slidesPerView: "auto",
     spaceBetween: 0,
@@ -94,6 +79,41 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
+  var Corporate = new Swiper(".Corporate", {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    watchSlidesProgress: true,
+    loop: false,
+    watchOverflow: true,
+    keyboard: true,
+    allowTouchMove: true,
+
+    // Навигация
+    navigation: {
+      nextEl: ".corporate__button-next",
+      prevEl: ".corporate__button-prev",
+    },
+
+    // Пагинация (точки)
+    pagination: {
+      el: ".corporate__pagination", // Селектор для контейнера пагинации
+      clickable: true, // Делаем пагинацию кликабельной
+      bulletClass: "swiper-pagination-bullet corporate__pagination-bullet", // Класс для каждой точки
+      bulletActiveClass:
+        "corporate__pagination-bullet--active swiper-pagination-bullet-active", // Класс для активной точки
+    },
+
+    on: {
+      init: function () {
+        this.update(); // Обновляем слайдер после инициализации
+        this.navigation.update();
+      },
+      slideChangeTransitionEnd: function () {
+        this.navigation.update();
+      },
+    },
+  });
+
   // Убедитесь, что стиль установлен для первого слайда при инициализации
   const firstSlideImg = map.slides[0].querySelector(".map__img");
   if (firstSlideImg) {
@@ -132,7 +152,92 @@ document.addEventListener("DOMContentLoaded", () => {
   Fancybox.bind("[data-fancybox]", {});
 
   //  Galery copr
-  Fancybox.bind(".cortopation__img", {
+  Fancybox.bind(".corporate__img", {
     groupAll: true,
   });
 });
+
+// Меню и вкладки
+let menuNavInitialized = false; // Флаг для отслеживания инициализации меню
+let businessSolutionInitialized = false; // Флаг для отслеживания инициализации бизнес-решений
+
+function initMenuNav() {
+  // Получаем все элементы с классом offer__menu-nav
+  const menuNavItems = document.querySelectorAll(".offer__menu-nav");
+
+  // Проходим по каждому элементу и добавляем обработчик события
+  menuNavItems.forEach((menuNav) => {
+    menuNav.addEventListener("click", function () {
+      // Переключаем класс active для текущего элемента
+      this.classList.toggle("active");
+
+      // Находим и переключаем видимость полигонов
+      const polygon = this.querySelector(".offer__menu-polygon");
+      if (polygon) {
+        polygon.classList.toggle("hide");
+      }
+
+      const polygonActive = this.querySelector(".offer__menu-polygon-active");
+      if (polygonActive) {
+        polygonActive.classList.toggle("shown");
+      }
+    });
+  });
+
+  menuNavInitialized = true; // Устанавливаем флаг инициализации
+}
+
+function initBusinessSolution() {
+  // Получаем все элементы с классом buisness__solution
+  const businessNavItems = document.querySelectorAll(".buisness__solution");
+
+  // Проходим по каждому элементу и добавляем обработчик события
+  businessNavItems.forEach((businessNav) => {
+    businessNav.addEventListener("click", function () {
+      // Переключаем класс active для текущего элемента
+      this.classList.toggle("active");
+    });
+  });
+
+  businessSolutionInitialized = true; // Устанавливаем флаг инициализации
+}
+
+// Функция проверки ширины экрана
+function checkScreenWidth() {
+  if (window.innerWidth < 992) {
+    if (!menuNavInitialized) {
+      initMenuNav(); // Инициализируем меню, если еще не инициализировано
+    }
+  } else {
+    // Если ширина экрана больше или равна 992px, можно удалить обработчики, если они были добавлены
+    if (menuNavInitialized) {
+      const menuNavItems = document.querySelectorAll(".offer__menu-nav");
+      menuNavItems.forEach((menuNav) => {
+        const clone = menuNav.cloneNode(true);
+        menuNav.parentNode.replaceChild(clone, menuNav);
+      });
+      menuNavInitialized = false; // Сбрасываем флаг
+    }
+  }
+
+  if (window.innerWidth < 576) {
+    if (!businessSolutionInitialized) {
+      initBusinessSolution(); // Инициализируем бизнес-решения, если еще не инициализировано
+    }
+  } else {
+    if (businessSolutionInitialized) {
+      const businessNavItems = document.querySelectorAll(".buisness__solution");
+      businessNavItems.forEach((businessNav) => {
+        const clone = businessNav.cloneNode(true);
+        businessNav.parentNode.replaceChild(clone, businessNav);
+      });
+      businessSolutionInitialized = false; // Сбрасываем флаг
+    }
+  }
+}
+
+// Проверяем ширину экрана при загрузке страницы
+checkScreenWidth();
+
+// Добавляем обработчик события для изменения размера окна
+window.addEventListener("resize", checkScreenWidth);

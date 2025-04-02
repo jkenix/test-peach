@@ -1,0 +1,18 @@
+<svg width="48.000000" height="48.000000" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip8370_241">
+			<rect id="phone" rx="0.000000" width="47.000000" height="47.000000" transform="translate(0.500000 0.500000)" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<g opacity="0.900000">
+		<rect id="phone" rx="0.000000" width="47.000000" height="47.000000" transform="translate(0.500000 0.500000)" fill="#FFFFFF" fill-opacity="0"/>
+		<g clip-path="url(#clip8370_241)">
+			<rect id="Rectangle 9052" x="8.199219" y="1.000000" rx="5.000000" width="31.599998" height="46.000000" stroke="#B01736" stroke-opacity="1.000000" stroke-width="2.000000"/>
+			<path id="Rectangle 9053" d="M33.59 0L33.59 5C33.59 6.65 32.25 8 30.59 8L17.39 8C15.74 8 14.39 6.65 14.39 5L14.39 0L33.59 0ZM31.59 2L31.59 5C31.59 5.55 31.15 6 30.59 6L17.39 6C16.84 6 16.39 5.55 16.39 5L16.39 2L31.59 2Z" fill="#B01736" fill-opacity="1.000000" fill-rule="evenodd"/>
+			<path id="Rectangle 9054" d="M19.19 39L28.79 39L28.79 41L19.19 41L19.19 39ZM19.21 40.98L19.19 41C18.63 41 18.19 40.56 18.19 40C18.19 39.43 18.63 39 19.19 39L19.21 39.02L19.21 40.98ZM28.77 39.02L28.79 39C29.35 39 29.79 39.43 29.79 40C29.79 40.56 29.35 41 28.79 41L28.77 40.98L28.77 39.02Z" fill="#B01736" fill-opacity="1.000000" fill-rule="evenodd"/>
+		</g>
+	</g>
+</svg>
